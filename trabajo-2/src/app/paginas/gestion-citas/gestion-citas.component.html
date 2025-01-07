@@ -1,0 +1,11 @@
+<div class="formulario">
+  <input type="text" [(ngModel)]="nuevaCita.texto" placeholder="Cita" required minlength="5" />
+  <input type="text" [(ngModel)]="nuevaCita.autor" placeholder="Autor" required minlength="2" />
+  <button (click)="agregarCita()">Agregar</button>
+</div>
+<ul>
+  <li *ngFor="let cita of citas">
+    {{ cita.texto }} - {{ cita.autor }}
+    <button (click)="eliminarCita(cita.id)">Eliminar</button>
+  </li>
+</ul>
